@@ -17,11 +17,11 @@ class EmailSender extends Mailable
     /**
      * Create a new message instance.
      */
-    public $details;
+    public $data;
 
-    public function __construct($details)
+    public function __construct($data)
     {
-        $this->details = $details;
+        $this->data = $data;
     }
 
     /**
@@ -31,7 +31,7 @@ class EmailSender extends Mailable
     {
         return new Envelope(
             from: new Address('jyn.tuyor@lccdo.edu.ph', 'Jyn Jo'),
-            subject: 'Email Sender',
+            subject: 'New Contact Form Submission',
         );
     }
 

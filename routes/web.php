@@ -1,14 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Mail\EmailSender;
+use App\Http\Controllers\MailSenderController;
 
 Route::get('/', function () {
-
-    // $details = 'nothing here';
-    // Mail::to('tuyor.jynchris@gmail.com')->send(new EmailSender($details));
-
-
     return view('welcome');
 });
 
+Route::post('email-send', MailSenderController::class)->name('email.send');
